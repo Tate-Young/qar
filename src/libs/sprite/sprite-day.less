@@ -1,0 +1,241 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@back-name: 'back';
+@back-x: 201px;
+@back-y: 134px;
+@back-offset-x: -201px;
+@back-offset-y: -134px;
+@back-width: 12px;
+@back-height: 22px;
+@back-total-width: 252px;
+@back-total-height: 233px;
+@back-image: 'images/sprite-day.png';
+@back: 201px 134px -201px -134px 12px 22px 252px 233px 'images/sprite-day.png' 'back';
+@bottom-planet-name: 'bottom-planet';
+@bottom-planet-x: 167px;
+@bottom-planet-y: 134px;
+@bottom-planet-offset-x: -167px;
+@bottom-planet-offset-y: -134px;
+@bottom-planet-width: 24px;
+@bottom-planet-height: 24px;
+@bottom-planet-total-width: 252px;
+@bottom-planet-total-height: 233px;
+@bottom-planet-image: 'images/sprite-day.png';
+@bottom-planet: 167px 134px -167px -134px 24px 24px 252px 233px 'images/sprite-day.png' 'bottom-planet';
+@no-data-name: 'noData';
+@no-data-x: 0px;
+@no-data-y: 0px;
+@no-data-offset-x: 0px;
+@no-data-offset-y: 0px;
+@no-data-width: 252px;
+@no-data-height: 124px;
+@no-data-total-width: 252px;
+@no-data-total-height: 233px;
+@no-data-image: 'images/sprite-day.png';
+@no-data: 0px 0px 0px 0px 252px 124px 252px 233px 'images/sprite-day.png' 'noData';
+@no-data-for-ipad-name: 'noDataForIpad';
+@no-data-for-ipad-x: 0px;
+@no-data-for-ipad-y: 134px;
+@no-data-for-ipad-offset-x: 0px;
+@no-data-for-ipad-offset-y: -134px;
+@no-data-for-ipad-width: 157px;
+@no-data-for-ipad-height: 99px;
+@no-data-for-ipad-total-width: 252px;
+@no-data-for-ipad-total-height: 233px;
+@no-data-for-ipad-image: 'images/sprite-day.png';
+@no-data-for-ipad: 0px 134px 0px -134px 157px 99px 252px 233px 'images/sprite-day.png' 'noDataForIpad';
+@back-2x-name: 'back@2x';
+@back-2x-x: 402px;
+@back-2x-y: 268px;
+@back-2x-offset-x: -402px;
+@back-2x-offset-y: -268px;
+@back-2x-width: 24px;
+@back-2x-height: 44px;
+@back-2x-total-width: 504px;
+@back-2x-total-height: 466px;
+@back-2x-image: 'images/sprite-day@2x.png';
+@back-2x: 402px 268px -402px -268px 24px 44px 504px 466px 'images/sprite-day@2x.png' 'back@2x';
+@bottom-planet-2x-name: 'bottom-planet@2x';
+@bottom-planet-2x-x: 334px;
+@bottom-planet-2x-y: 268px;
+@bottom-planet-2x-offset-x: -334px;
+@bottom-planet-2x-offset-y: -268px;
+@bottom-planet-2x-width: 48px;
+@bottom-planet-2x-height: 48px;
+@bottom-planet-2x-total-width: 504px;
+@bottom-planet-2x-total-height: 466px;
+@bottom-planet-2x-image: 'images/sprite-day@2x.png';
+@bottom-planet-2x: 334px 268px -334px -268px 48px 48px 504px 466px 'images/sprite-day@2x.png' 'bottom-planet@2x';
+@no-data-2x-name: 'noData@2x';
+@no-data-2x-x: 0px;
+@no-data-2x-y: 0px;
+@no-data-2x-offset-x: 0px;
+@no-data-2x-offset-y: 0px;
+@no-data-2x-width: 504px;
+@no-data-2x-height: 248px;
+@no-data-2x-total-width: 504px;
+@no-data-2x-total-height: 466px;
+@no-data-2x-image: 'images/sprite-day@2x.png';
+@no-data-2x: 0px 0px 0px 0px 504px 248px 504px 466px 'images/sprite-day@2x.png' 'noData@2x';
+@no-data-for-ipad-2x-name: 'noDataForIpad@2x';
+@no-data-for-ipad-2x-x: 0px;
+@no-data-for-ipad-2x-y: 268px;
+@no-data-for-ipad-2x-offset-x: 0px;
+@no-data-for-ipad-2x-offset-y: -268px;
+@no-data-for-ipad-2x-width: 314px;
+@no-data-for-ipad-2x-height: 198px;
+@no-data-for-ipad-2x-total-width: 504px;
+@no-data-for-ipad-2x-total-height: 466px;
+@no-data-for-ipad-2x-image: 'images/sprite-day@2x.png';
+@no-data-for-ipad-2x: 0px 268px 0px -268px 314px 198px 504px 466px 'images/sprite-day@2x.png' 'noDataForIpad@2x';
+@spritesheet-width: 252px;
+@spritesheet-height: 233px;
+@spritesheet-image: 'images/sprite-day.png';
+@spritesheet-sprites: @back @bottom-planet @no-data @no-data-for-ipad;
+@spritesheet: 252px 233px 'images/sprite-day.png' @spritesheet-sprites;
+@retina-spritesheet-width: 504px;
+@retina-spritesheet-height: 466px;
+@retina-spritesheet-image: 'images/sprite-day@2x.png';
+@retina-spritesheet-sprites: @back-2x @bottom-planet-2x @no-data-2x @no-data-for-ipad-2x;
+@retina-spritesheet: 504px 466px 'images/sprite-day@2x.png' @retina-spritesheet-sprites;
+
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+@back-group-name: 'back';
+@back-group: 'back' @back @back-2x;
+@bottom-planet-group-name: 'bottom-planet';
+@bottom-planet-group: 'bottom-planet' @bottom-planet @bottom-planet-2x;
+@no-data-group-name: 'noData';
+@no-data-group: 'noData' @no-data @no-data-2x;
+@no-data-for-ipad-group-name: 'noDataForIpad';
+@no-data-for-ipad-group: 'noDataForIpad' @no-data-for-ipad @no-data-for-ipad-2x;
+@retina-groups: @back-group @bottom-planet-group @no-data-group @no-data-for-ipad-group;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `retina-sprite` class sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+@icon-home-group: 'icon-home' @icon-home @icon-home-2x;
+
+.icon-home {
+  .retina-sprite(@icon-home-group);
+}
+*/
+.sprite-background-size(@sprite) {
+  @sprite-total-width: extract(@sprite, 7);
+  @sprite-total-height: extract(@sprite, 8);
+  background-size: @sprite-total-width @sprite-total-height;
+}
+
+.retina-sprite(@retina-group) {
+  @normal-sprite: extract(@retina-group, 2);
+  @retina-sprite: extract(@retina-group, 3);
+  .sprite(@normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    .sprite-image(@retina-sprite);
+    .sprite-background-size(@normal-sprite);
+  }
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
+
+/*
+The `.retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in LESS
+
+.retina-sprites(@retina-groups);
+*/
+.retina-sprites(@retina-groups, @i: 1) when (@i <= length(@retina-groups)) {
+  @retina-group: extract(@retina-groups, @i);
+  @sprite-name: e(extract(@retina-group, 1));
+  .@{sprite-name} {
+    .retina-sprite(@retina-group);
+  }
+  .retina-sprites(@retina-groups, @i + 1);
+}

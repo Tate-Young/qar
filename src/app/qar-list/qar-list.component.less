@@ -1,0 +1,290 @@
+// 变量声明
+@ipadDefaultColor: #79acf9;
+@phoneDefaultColor: #4b5e76;
+@genericFont: serif;
+
+// QAR样式区
+[role="qar"] {
+  height: 100%;
+}
+
+.nav {
+  position: relative;
+  box-sizing: content-box;
+  text-align: center;
+  color: white;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  background-color: @ipadDefaultColor;
+
+  .nav-back {
+    position: absolute;
+    left: -0.5rem;
+    top: .25rem;
+    width: 4rem;
+
+    img {
+      width: .6rem;
+    }
+  }
+
+  .triangle {
+    position: absolute;
+    top: 44%;
+    right: 29%;
+    border: 7px solid transparent;
+    border-top: 7px solid @ipadDefaultColor;
+  }
+
+  input[type='month'],
+  input[type='text'] {
+    position: absolute;
+    right: 28%;
+    top: 20%;
+    width: 5.25rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    //height: 1.8rem;
+    //padding: 0 1.9rem 0 .9rem;
+    color: @ipadDefaultColor;
+    text-indent: 1rem;
+    //text-align: center;
+    border: none;
+    outline: none;
+    border-radius: .2rem;
+    -webkit-appearance: none;
+    font-family: HiraginoSansGB-W3, @genericFont;
+    font-size: .8rem;
+  }
+
+  input[type='month'] {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+//.qar-sum {
+//  width: 100%;
+//  height: 3.2rem;
+//  line-height: 3.2rem;
+//  background-color: #94beff;
+//  text-align: center;
+//
+//  div {
+//    display: inline-block;
+//    box-sizing: border-box;
+//    width: 30%;
+//    color: white;
+//    font-family: STHeitiSC;
+//  }
+//
+//  p {
+//    display: inline-block;
+//    font-size: .8rem;
+//  }
+//}
+
+.qar-list {
+  padding: .75rem;
+
+  .qar-board {
+    border-radius: 4px;
+    background-color: white;
+    padding: .7rem;
+    margin-bottom: .6rem;
+    font-family: STHeitiSC, @genericFont;
+    font-size: .9rem;
+    color: #666;
+    box-shadow: 0 0 10px 0 rgba(192, 226, 255, 0.5);
+
+    .first-line {
+      color: #666;
+      padding-bottom: .5rem;
+
+      &>div {
+        display: inline-block;
+
+        &.flt-no {
+          font-family: ArialRoundedMT, @genericFont;
+          font-size: 21px;
+          font-weight: bold;
+          color: #46c3e3;
+          padding-right: .5rem;
+        }
+      }
+    }
+
+    .second-line {
+      position: relative;
+
+      &>div {
+        display: inline-block;
+
+        &.qar-description {
+          width: 75%;
+          color: #fd656a;
+          word-break: break-all;
+        }
+
+        &.qar-detail {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+
+          &>div {
+            display: inline-block;
+            height: 1.1rem;
+            line-height: 1.1rem;
+
+            &.qar-level {
+              padding: 0 .5rem;
+              border-radius: 2.2rem;
+              text-align: center;
+              color: white;
+
+              &.level-3 {
+                background-color: #ff7d7d;
+              }
+
+              &.level-2 {
+                background-color: #ff8746;
+              }
+
+              &.level-1 {
+                background-color: #18dfb7;
+              }
+            }
+
+            &.qar-num {
+              margin-left: .5rem;
+              color: white;
+              padding: 0 .5rem;
+              border-radius: 2.2rem;
+              background-color: @ipadDefaultColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.qar-bottom {
+  font-size: .7rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  color: #8d8d8d;
+
+  div,
+  img {
+    display: inline-block;
+  }
+
+  img {
+    width: 1.2rem;
+    margin-right: .5rem;
+    vertical-align: -.2rem;
+  }
+}
+
+.refresh {
+  text-align: center;
+
+  img {
+    width: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-family: "微软雅黑", @genericFont;
+  }
+  .nav {
+    background-color: @phoneDefaultColor;
+    input {
+      background-color: @phoneDefaultColor;
+      color: white !important;
+      right: 5% !important;
+      border: 1px solid white !important;
+    }
+    .triangle {
+      right: 7.5%;
+      border-top: 7px solid white;
+    }
+  }
+  .qar-list {
+    .qar-board {
+      font-size: .7rem;
+      color: @phoneDefaultColor;
+      .first-line {
+        color: @phoneDefaultColor;
+
+        &>div {
+          &.flt-no {
+            font-family: ArialRoundedMT, @genericFont;
+            font-size: .7rem;
+            font-weight: normal;
+            color: @phoneDefaultColor;
+            padding-right: .2rem;
+          }
+          &.evn-time {
+            color: #94a3b6;
+          }
+        }
+      }
+      .second-line {
+        .qar-description {
+          color: #dd3a2a;
+          width: 55% !important;
+        }
+        .qar-detail {
+          .qar-level {
+            &.level-3 {
+              background-color: #4fda63 !important;
+            }
+          }
+          .qar-num {
+            margin-left: .2rem !important;
+            background-color: #5f8abd !important;
+          }
+        }
+      }
+    }
+  }
+  .qar-bottom {
+    font-size: .6rem;
+    padding-top: .5rem;
+
+    img {
+      width: 1rem;
+    }
+  }
+  .refresh {
+    img {
+      width: 1rem;
+    }
+  }
+}
+
+.icon-bottom-planet {
+  vertical-align: -.2rem;
+  margin-right: .5rem;
+}
+
+@media screen and (max-width: 370px) {
+  .qar-list {
+    .qar-board {
+      padding: .7rem .5rem !important;
+      .second-line {
+        .qar-description {
+          width: 50% !important;
+        }
+        .qar-detail {
+          .qar-num {
+            margin-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}

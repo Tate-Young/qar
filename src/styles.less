@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  height: 100%;
+  font-size: 20px;
+}
+
+body {
+  height: 100%;
+  font-size: 1rem;
+  font-family: "微软雅黑", serif;
+  background-color: #f8f8f8;
+}
+
+ul {
+  margin: 0;
+}
+
+i {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pull- {
+  &left {
+    float: left;
+  }
+
+  &right {
+    float: right;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-wrap {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.align-center {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+}
+
+.fa-spin {
+  -webkit-animation: a 2s infinite linear;
+  animation: a 2s infinite linear;
+}
+@-webkit-keyframes a {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes a {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.loading-spinner {
+  .align-center;
+  left: 48%;
+  width: 2rem;
+
+  @media screen and (max-width: 600px) {
+    width: 1.5rem;
+  }
+}
+
+.data-none {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  img {
+    width: 7.85rem;
+  }
+
+  p {
+    color: #b4b4b4;
+    font-size: 0.6rem;
+    padding-top: .35rem;
+  }
+
+  &.mobile {
+    img {
+      width: 12.8rem
+    }
+    p {
+      color: #666;
+      font-size: 1rem;
+      padding-bottom: .8rem;
+      padding-top: 0;
+    }
+  }
+}
+
+.scrollable {
+  width: 100%;
+  //height: ~'calc(100% - 2.6rem)';
+  height: ~'-webkit-calc(100% - 2.6rem)';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .scrollable-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 3rem;
+  }
+}

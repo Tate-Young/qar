@@ -1,0 +1,91 @@
+<div role="qar" (click)="hideDateList($event.target)">
+  <!--导航栏-->
+  <nav class="nav">
+    <div class="pull-left nav-back" (click)="goBack()"><i class="icon-back"></i></div>
+    <div>{{'qar' | translate}}</div>
+
+    <input type="text" class="date date-selector" [ngModel]="selectedDate | date:'yyyy-MM'" (ngModelChange)="selectedDate=$event">
+    <input type="month" class="date" *ngIf="isAndroid; else dateSelector" [(ngModel)]="selectedDate" (change)="resetSearchDate()" disabled="{{loading || isLoadMore}}">
+    <ng-template #dateSelector>
+      <input type="month" class="date" [(ngModel)]="selectedDate" (blur)="resetSearchDate()" disabled="{{loading || isLoadMore}}">
+    </ng-template>
+    <div class="triangle"></div>
+
+    <!--下拉选择框-->
+    <!--<div class="drop-down">-->
+      <!--<div class="date date-selector" (click)="showDateList=true">{{selectedDate | date:'yyyy-MM'}}</div>-->
+      <!--<input type="month" class="date date-selector drop-down" [(ngModel)]="selectedDate">-->
+      <!--<div class="date-list" [hidden]="!showDateList">-->
+        <!--<ul>-->
+          <!--&lt;!&ndash;todo: 倒序排列如何处理&ndash;&gt;-->
+          <!--<li class="date" [dateChoose]="date" *ngFor="let date of dateList">{{date | date:'yyyy-MM'}}</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+  </nav>
+
+  <!--<section class="qar-sum">-->
+    <!--<div>一级 <p>1次</p></div>-->
+    <!--<div>二级 <p>10次</p></div>-->
+    <!--<div>三级 <p>1次</p></div>-->
+  <!--</section>-->
+
+  <section class="scrollable">
+    <div class="scrollable-content" appScrollBottom>
+      <img src="assets/images/loading.png" class="fa-spin loading-spinner" *ngIf="loading">
+
+      <!--无数据-->
+      <section [hidden]="(qarLists && qarLists.length) || loading">
+        <div class="data-none mobile" *ngIf="isMobile; else ipadImg">
+          <p>{{'noData' | translate}}</p>
+          <i class="icon-noData"></i>
+        </div>
+        <ng-template #ipadImg>
+          <div class="data-none">
+            <i class="icon-noData-ipad"></i>
+            <p>{{'noData' | translate}}</p>
+          </div>
+        </ng-template>
+
+      </section>
+
+      <div class="qar-list" [hidden]="loading">
+        <div class="qar-board" *ngFor="let qar of qarLists">
+          <div class="first-line">
+            <div class="flt-no">{{qar.FLINO}}</div>
+            <div>{{qar.ACREG}}</div>
+            <div class="pull-right evn-time">{{qar.EVN_TIME | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+          </div>
+          <div class="second-line">
+            <div class="qar-description" *ngIf="isZn; else enEvName">{{qar.EV_NAME}}</div>
+            <ng-template #enEvName>
+              <div class="qar-description">{{qar.EN_EV_NAME}}</div>
+            </ng-template>
+            <div class="qar-detail">
+              <!--<div class="qar-level level-{{qar.SEV_ID}}" *ngIf="isZn; else qarLevel">{{qar.SEV_ID}}级</div>-->
+              <!--<ng-template #qarLevel>-->
+                <!--<div class="qar-level level-{{qar.SEV_ID}}">level {{qar.SEV_ID}}</div>-->
+              <!--</ng-template>-->
+              <div class="qar-level level-{{qar.SEV_ID}}" *ngIf="qar.SEV_ID || qar.SEV_ID === 0">
+                <div *ngIf="isZn; else sev">{{qar.SEV_ID}}级</div>
+                <ng-template #sev><div>level {{qar.SEV_ID}}</div></ng-template>
+              </div>
+
+              <div class="qar-num" *ngIf="qar.PEAK_VALUE || qar.PEAK_VALUE === 0">{{qar.PEAK_VALUE}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="qar-bottom" *ngIf="noMoreData && !isLoadMore && qarLists && qarLists.length && !loading">
+          <i class="icon-bottom-planet"></i>
+          <div>{{'bottom' | translate}}</div>
+        </div>
+      </div>
+
+      <!--下拉加载时显示 -->
+      <section *ngIf="isLoadMore && !loading" class="refresh">
+        <img src="assets/images/loading.png" class="fa-spin">
+      </section>
+    </div>
+  </section>
+
+</div>

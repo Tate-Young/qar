@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "buildVersion": "V038",
+  "versionDiscript": "新增babel-polyfill",
+  "downloadAdd":"http://10.88.15.65/mobile/applet/crewportal/qar:latest"
+}

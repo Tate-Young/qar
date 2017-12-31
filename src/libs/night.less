@@ -1,0 +1,63 @@
+@import "sprite/icon-night";
+
+@nav-default-color: #79acf9;
+@nav-night-color: #132249;
+@nightBgColor: #051112;
+
+body {
+  background-color: @nightBgColor;
+}
+
+.nav {
+  background-color: @nav-night-color;
+
+  input {
+    background-color: #194a8f;
+  }
+}
+
+.qar-list {
+  .qar-board {
+    background-color: #0e2342;
+    box-shadow: none;
+    .first-line {
+      color: #006bbd;
+    }
+  }
+}
+
+.data-none {
+  &.mobile {
+    p {
+      color: #006bbd;
+    }
+  }
+
+  p {
+    color: #006bbd;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    input {
+      border: none !important;
+      background-color: @nightBgColor;
+    }
+  }
+  .qar-list {
+    .qar-board {
+      .first-line {
+        color: #57b1f6;
+        &>div {
+          &.flt-no {
+            color: #57b1f6;
+          }
+          &.evn-time {
+            color: #899dc2;
+          }
+        }
+      }
+    }
+  }
+}
