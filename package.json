@@ -4,6 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "precommit": "echo pre commit",
+    "postcommit": "echo post commit",
+    "prestart": "echo prestart",
     "start": "node scripts/start.js",
     "prod": "scripty",
     "i18n": "ng-xi18n",
@@ -51,6 +54,7 @@
     "gulp-util": "^3.0.8",
     "gulp-zip": "^4.0.0",
     "gulp.spritesmith": "^6.5.1",
+    "husky": "^0.14.3",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
